@@ -15,6 +15,7 @@ class Aritmetica:
     
     def dividir(self):
         return self.operandoA / self.operandoB
+
     
 
 print("\n\tEn este programa se crea la clase Aritmetica y se pone a prueba")
