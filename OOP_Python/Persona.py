@@ -51,7 +51,15 @@ class Persona:
         self.__nombre =  nombre #self.Atributo de instancia, del objeto que estamos creando por defecto
         self.apellido  =  apellido  #Atributo = parametro
         self.edad =  edad 
-    
+
+    @property #decorador que deja en claro que es Metodo 'get' para mostrar el nombre, al llamar el metodo no se pone '()'
+    def nombre(self): 
+        return self.__nombre
+
+    @nombre.setter#Decorador para definir el metodo 'setter'
+    def nombre(self, nombre):
+        self.__nombre = nombre
+
     def mostrar_detalle(self):  
         print(f"El nombre de la persona es:\n {self.__nombre} {self.apellido} \n su edad es: {self.edad}")
   
@@ -59,7 +67,15 @@ persona1 = Persona("Isra" , "Mejia", 23)
 
 #----------------------Encapsulamiento 
 # al poner "__" en las variables de instancia, se entiende que son privadas, y asi tenemos que usarlas
-persona1.__nombre = 'Hipolitooo' #NO se recomieda hacer esto
-print(f'Nombre = {persona1.__nombre}') #Hace referencia a __nombre, pero NO a _Persona__nombre = 'Isra'
+persona1.__nombre = 'Hipolito' #NO se recomieda hacer esto
+print(f'\npensariamos que se modifico el nombre = {persona1.__nombre}') #Hace referencia a __nombre, pero NO a _Persona__nombre = 'Isra'
+print(f'Pero _Persona__nombre =  {persona1.nombre}') #no se necesita poner () al metodo ya que el property deja en claro que es un metodo get
 #Al poner el "__" el metodo mostrar detalle deja de servir, asi que se podria decir que si sirve, pero es por buenas practicas de codigo
-persona1.mostrar_detalle()  
+
+print('\nPara cambiarlo de verdad usamos el metodo setter')
+persona1.nombre = 'Israaaaa'
+print(f'_Persona__nombre =  {persona1.nombre}')
+print(f'De la otra forma que esta mal sale : {persona1.__nombre} \n')
+print("Conclusion, solo se puede encapsular con '__' , junto con los decoradores de @property para el getter y @nombre.setter \n ")
+
+
