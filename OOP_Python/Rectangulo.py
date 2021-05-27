@@ -13,3 +13,9 @@ altura = int(input('Ingrese la altura del rectangulo: '))
 rectangulo1 = Rectangulo(base, altura)
 print(f"\n\tEl area del rectangulo es: {rectangulo1.calcula_area()}")
 
+base = int(input('\n\nIngrese la base del rectangulo2: '))
+altura = int(input('Ingrese la altura del rectangulo2: '))
+
+rectangulo2 = Rectangulo(base, altura)
+print(f"\n\tEl area del rectangulo2 es: {rectangulo2.calcula_area()}")
+

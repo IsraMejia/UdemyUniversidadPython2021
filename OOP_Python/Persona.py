@@ -1,13 +1,17 @@
 class Persona:
-    def __init__(self, nombre, apellido, edad): 
+    def __init__(self, nombre, apellido, edad, *tupla, **diccionario): 
+        #   *args = argumentos variables de tipo tupla
+        #   **kwargs = argumentos variables de tipo diccionario
     #El parametro 'self' al metodo inicializador de la clase hace referencia al objeto mismo que se va a crear
         #El doble guion bajo 'dunder' le da el nombre de metodo "dunder init"
         self.nombre =  nombre #self.Atributo de instancia, del objeto que estamos creando por defecto
         self.apellido  =  apellido  #Atributo = parametro
         self.edad =  edad
+        self.tupla = tupla
+        self.diccionario = diccionario
     
     def mostrar_detalle(self): #Se necesita el parametro "self" para funcionar como metodo de instancia
-        print(f"El nombre de la persona es:\n {self.nombre} {self.apellido} \n y su edad es: {self.edad} \n")
+        print(f"El nombre de la persona es:\n {self.nombre} {self.apellido} \n  su edad es: {self.edad} \n Su tupla es {self.tupla} \n y su diccionario es {self.diccionario}")
             #Con la palabra self nos referimos al objeto en cuestion como cuando usamos widget en flutter :D
 
 
@@ -17,7 +21,7 @@ class Persona:
 print("\n\tLeccion 01 POO\n")
 print(type(Persona))
 
-persona1 = Persona("Isra" , "Mejia" , 23) #Los parentesis manda a llamar el metodo inicializador o constructor de la clase __init__
+persona1 = Persona("Isra" , "Mejia", 23,   3178,45,321,32, m='manzana', a = 'apple' ) #Los parentesis manda a llamar el metodo inicializador o constructor de la clase __init__
 
 # print(f"El nombre de la persona1 es: {persona1.nombre} {persona1.apellido} \ny su edad es: {persona1.edad} \n")
 
