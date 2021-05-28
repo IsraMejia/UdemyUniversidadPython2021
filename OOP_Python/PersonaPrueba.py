@@ -5,6 +5,7 @@ print('Creacion de Objetos'.center(50,'-')) #centramos con 50 quion bajos en tot
 persona1 = Persona('Bella', 'Poarch', 23)
 persona1.mostrar_detalle()
 
+
 # print(__name__)  #dunder name =  Nos dice el nombre del modulo 
     #Si nos sale __main__ se refiere que el modulo ejecutado es del propio archivo
 
