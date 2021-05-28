@@ -82,7 +82,11 @@ class Persona:
     def mostrar_detalle(self):  
         print(f"El nombre de la persona es:\n {self.__nombre} {self.apellido} \n su edad es: {self.edad}")
         #Los metodos dentro de la clase Si permiten mostrar los atributos encapsulados (getter)
-  
+
+    def __del__(self): #Metodo destructor del objeto
+        #Aqui se pone el codigo que se ejecuta al destruir el objeto
+        print(f"El objeto Persona: {self.__nombre} {self.__apellido}  ha sido eliminado \n")
+
 
 if __name__ == '__main__' : #Para asegurarnos de que de este Modulo solo se ejecute la definicion de la clase que necesitamos en otros Modulos/Archivos
     persona1 = Persona("Isra" , "Mejia", 23)
