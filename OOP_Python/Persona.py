@@ -83,27 +83,34 @@ class Persona:
         print(f"El nombre de la persona es:\n {self.__nombre} {self.apellido} \n su edad es: {self.edad}")
         #Los metodos dentro de la clase Si permiten mostrar los atributos encapsulados (getter)
   
-persona1 = Persona("Isra" , "Mejia", 23)
 
-#----------------------Encapsulamiento 
-# al poner "__" en las variables de instancia, se entiende que son privadas, y asi tenemos que usarlas
-persona1.__nombre = 'Hipolito' #NO se recomieda hacer esto
-print(f'\tEncapsulamiento\npensariamos que se modifico el nombre = {persona1.__nombre}') #Hace referencia a __nombre, pero NO a _Persona__nombre = 'Isra'
-print(f'Pero _Persona__nombre =  {persona1.nombre}') #no se necesita poner () al metodo ya que el property deja en claro que es un metodo get
-#Al poner el "__" el metodo mostrar detalle deja de servir, asi que se podria decir que si sirve, pero es por buenas practicas de codigo
+if __name__ == '__main__' : #Para asegurarnos de que de este Modulo solo se ejecute la definicion de la clase que necesitamos en otros Modulos/Archivos
+    persona1 = Persona("Isra" , "Mejia", 23)
 
-print('\nPara cambiarlo de verdad usamos el metodo setter')
-persona1.nombre = 'Israaaaa' #<- Setter
-print(f'_Persona__nombre =  {persona1.nombre}')
-print(f'De la otra forma que esta mal sale : {persona1.__nombre} \n   ya que tratamos entrar al atributo fuera de metodos getters o metodos internos de la clase (no se puede acceder a atributos encapsulados fuera de la clase)')
-print("\nConclusion, solo se puede encapsular con '__' , junto con los decoradores de @property para el getter y @nombre.setter  ")
+    #----------------------Encapsulamiento 
+    # al poner "__" en las variables de instancia, se entiende que son privadas, y asi tenemos que usarlas
+    persona1.__nombre = 'Hipolito' #NO se recomieda hacer esto
+    print(f'\tEncapsulamiento\npensariamos que se modifico el nombre = {persona1.__nombre}') #Hace referencia a __nombre, pero NO a _Persona__nombre = 'Isra'
+    print(f'Pero _Persona__nombre =  {persona1.nombre}') #no se necesita poner () al metodo ya que el property deja en claro que es un metodo get
+    #Al poner el "__" el metodo mostrar detalle deja de servir, asi que se podria decir que si sirve, pero es por buenas practicas de codigo
 
-print('\n Los metodos dentro de la clase Si permiten mostrar los atributos encapsulados (getter) -> persona1.mostrar_detalle()')
-persona1.mostrar_detalle()
+    print('\nPara cambiarlo de verdad usamos el metodo setter')
+    persona1.nombre = 'Israaaaa' #<- Setter
+    print(f'_Persona__nombre =  {persona1.nombre}')
+    print(f'De la otra forma que esta mal sale : {persona1.__nombre} \n   ya que tratamos entrar al atributo fuera de metodos getters o metodos internos de la clase (no se puede acceder a atributos encapsulados fuera de la clase)')
+    print("\nConclusion, solo se puede encapsular con '__' , junto con los decoradores de @property para el getter y @nombre.setter  ")
 
-print('\n\nAhora cambiamos con puros setters')
-persona1.nombre = 'Luis'
-persona1.apellido = 'MiRex'
-persona1.edad = 7
-persona1.mostrar_detalle()
+    print('\n Los metodos dentro de la clase Si permiten mostrar los atributos encapsulados (getter) -> persona1.mostrar_detalle()')
+    persona1.mostrar_detalle()
+
+    print('\n\nAhora cambiamos con puros setters')
+    persona1.nombre = 'Luis'
+    persona1.apellido = 'MiRex'
+    persona1.edad = 7
+    persona1.mostrar_detalle()
+
+
+    print(__name__)  #dunder name =  Nos dice el nombre del modulo 
+        #Si nos sale __main__ se refiere que el modulo ejecutado es del propio archivo
+        #Si este modulo es llamado de otro archivo saldra 'Persona', que es el modulo del que se ejecuta el codigo
 
