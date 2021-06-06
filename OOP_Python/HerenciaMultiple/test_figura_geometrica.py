@@ -20,3 +20,5 @@ print(f"Área del rectangulo:  { rectangulo1.calcular_area() }")
 
 #print("\n\t\tClase abstracta")
 #figura = FiguraGeometrica() #No se podra instanciar asi como asi, porque es una clase abstracta
+
+print(Cuadrado.mro()) #Vemos como despues de la clase padre, la clase de la que hereda es la ABC (de python) , despues la clase color y finalmente la clase object
