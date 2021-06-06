@@ -7,9 +7,11 @@ print(f"Y su area es: { cuadrado1.calcular_area() }")
 
 #MRO = Method Resolution Order <- El orden de resolucion de los metodos, como en el caso de herencia multiple
 # print(Cuadrado.mro()) # Sigue el orden en el que se definio la herencia, primero la clase hija, luego la primer clase de herencia , luego la segunda y asi
-print(f"\n{cuadrado1}\n") 
+print(f"\n{cuadrado1}\n")
 
-rectangulo1 = Rectangulo(ancho=-2 , alto= 3, color= 'Purpura')
-rectangulo1.ancho = 4   
+print("\n\t Rectangulo")
+rectangulo1 = Rectangulo(ancho= -1 , alto= -3, color= 'Purpura')
+#rectangulo1.ancho = 4
+print("\n\t Se instancio el Rectangulo")
 print(f"\n{rectangulo1}\n")
-print(f"Área del rectangulo:  { rectangulo1.calcular_area() }")   
+print(f"Área del rectangulo:  { rectangulo1.calcular_area() }")

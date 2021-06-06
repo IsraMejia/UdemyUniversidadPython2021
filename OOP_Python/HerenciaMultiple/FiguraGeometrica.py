@@ -3,13 +3,13 @@ class FiguraGeometrica:
         if self._validar_valor(ancho):
             self._ancho = ancho
         else:
-            self.ancho = 0
+            self._ancho = 0
             print(f"Valor erroneo ancho: {ancho}")
 
         if self._validar_valor(alto) :
             self._alto = alto
         else:
-            self._alto = 0
+            self._alto = 0  
             print(f"Valor erroneo alto : {alto}")
     
     @property #getter
