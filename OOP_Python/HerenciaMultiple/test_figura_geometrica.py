@@ -1,5 +1,7 @@
 from Cuadrado import Cuadrado
+#from FiguraGeometrica import FiguraGeometrica
 from Rectangulo import Rectangulo
+
 print('Creacion de Objeto Cuadrado'.center(70, '-'))
 cuadrado1 = Cuadrado(lado=9, color='azul')
 print(f"\nEl alto es: {cuadrado1.alto} , su ancho es: {cuadrado1.ancho}, su color es {cuadrado1.color}")
@@ -15,3 +17,6 @@ rectangulo1 = Rectangulo(ancho= -1 , alto= -3, color= 'Purpura')
 print("\n\t Se instancio el Rectangulo")
 print(f"\n{rectangulo1}\n")
 print(f"Área del rectangulo:  { rectangulo1.calcular_area() }")
+
+#print("\n\t\tClase abstracta")
+#figura = FiguraGeometrica() #No se podra instanciar asi como asi, porque es una clase abstracta
